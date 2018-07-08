@@ -1,7 +1,7 @@
 ## diff-service
 Sample spring boot service project which provides diff related operations.
 
-##Operations
+## Operations
 (PUT/POST) /v1/diff/{id}/{left|right}  : operation for message store
  
 (GET) /v1/diff/{id}  : operation for diff on provided messages 
