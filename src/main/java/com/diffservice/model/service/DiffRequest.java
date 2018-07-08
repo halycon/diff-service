@@ -1,5 +1,7 @@
 package com.diffservice.model.service;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class DiffRequest implements Serializable {
@@ -15,6 +17,7 @@ public class DiffRequest implements Serializable {
         this.data = data;
     }
 
+    @ApiModelProperty(value = "a valid base64 encoded binary data should be provided.")
     public String getData() {
         return data;
     }

@@ -1,6 +1,7 @@
 package com.diffservice.model.service;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.annotations.ApiModelProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DiffResponse extends Response {
@@ -17,7 +18,7 @@ public class DiffResponse extends Response {
             this.setErrorMessage(message);
 
     }
-
+    @ApiModelProperty(value = "contains operation response information", allowEmptyValue = true)
     public String getMessage() {
         return message;
     }

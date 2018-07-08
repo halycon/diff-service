@@ -90,7 +90,7 @@ public class DiffService implements IDiffService<String> {
                 diffLength++;
             }else
             if(!identical) {
-                builder = builderAppendDifferences(builder,offset,diffLength);
+                builderAppendDifferences(builder,offset,diffLength);
                 diffLength = 0;
                 identical = true;
             }
@@ -98,15 +98,14 @@ public class DiffService implements IDiffService<String> {
         }
 
         if(!identical)
-            builder = builderAppendDifferences(builder,offset-1,diffLength);
+            builderAppendDifferences(builder,offset-1,diffLength);
 
 
         return new DiffResponse(builder.toString(),true);
     }
 
-    public void validateBase64EncodedData(String data) throws Exception {
-        byte[] b1 = Base64.getDecoder().decode(data);
-        b1 = null;
+    public void validateBase64EncodedData(String data) throws IllegalArgumentException  {
+        Base64.getDecoder().decode(data);
     }
 
     private StringBuilder builderAppendDifferences(StringBuilder builder,long offset, long diffLength){

@@ -1,5 +1,7 @@
 package com.diffservice.model.service;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class Response implements Serializable {
@@ -9,6 +11,7 @@ public class Response implements Serializable {
     private boolean success;
     private String errorMessage;
 
+    @ApiModelProperty(value = "operation success status")
     public boolean isSuccess() {
         return success;
     }
@@ -17,6 +20,7 @@ public class Response implements Serializable {
         this.success = success;
     }
 
+    @ApiModelProperty(value = "contains operation response error message" , allowEmptyValue = true)
     public String getErrorMessage() {
         return errorMessage;
     }
