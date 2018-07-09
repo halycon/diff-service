@@ -17,11 +17,13 @@ Spring Boot, Swagger
 Maven have to be installed on local
 
 "maven install" for build
+
 java -Djava.security.egd=file:/dev/./urandom  -jar target/diff-service-1.0.jar
 
 or 
 
 docker build -t diff-service .
+
 docker run -p 8080:8080 diff-service
 
 ## Documentation
