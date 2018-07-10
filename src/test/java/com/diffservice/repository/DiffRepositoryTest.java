@@ -68,10 +68,10 @@ public class DiffRepositoryTest {
 
         diffRepository.save(BigInteger.valueOf(22),"dGVrZSB2b2xrbW4gdHBydA==",DiffSide.right);
         diffRepository.save(BigInteger.valueOf(22),"dGVrZSB2b2xrbW4gdHBydA==",DiffSide.left);
-        String rightdata1 = diffRepository.findById(BigInteger.valueOf(21)).getRightdata();
+        String rightdata1 = diffRepository.findById(BigInteger.valueOf(22)).getRightdata();
         diffRepository.save(BigInteger.valueOf(22),"dGVzdCB2b2xrYW4gdGVzdA==",DiffSide.right);
-        String rightdata2 = diffRepository.findById(BigInteger.valueOf(21)).getRightdata();
-        Assert.assertEquals(rightdata1,rightdata2);
+        String rightdata2 = diffRepository.findById(BigInteger.valueOf(22)).getRightdata();
+        Assert.assertNotEquals(rightdata1,rightdata2);
 
     }
 }
